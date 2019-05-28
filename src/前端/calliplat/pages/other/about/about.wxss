@@ -1,0 +1,5 @@
+/* pages/other/other/other.wxss */
+
+image{
+  width: 100%;
+}

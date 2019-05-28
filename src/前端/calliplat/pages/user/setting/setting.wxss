@@ -1,0 +1,27 @@
+/* pages/user/setting/setting.wxss */
+page{
+  background: #f6f6f6;
+}
+.body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  background: #f6f6f6;
+}
+.devide-line{
+  height: 30rpx;
+}
+.setting-item{
+  padding: 10px 20px;
+  background: #fff;
+  font-size: 32rpx;
+}.setting-item:hover{
+  background: #fcfcfc;
+
+}
+.login-out{
+  color: #ce4e5a;
+}

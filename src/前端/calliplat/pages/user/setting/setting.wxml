@@ -1,0 +1,9 @@
+<!--pages/user/setting/setting.wxml-->
+<view class='body'>
+  <view class='setting-item' bindtap='callback'>反馈</view>
+  <view class='setting-item' bindtap='settingTheme'>主题设置</view>
+  <view class='setting-item' bindtap='clearStorage'>清除缓存</view>
+  <view class='devide-line'></view>
+  <view class='setting-item' bindtap='about'>关于</view>
+  <view class='setting-item login-out' bindtap='loginOut'>退出登录</view>
+</view>

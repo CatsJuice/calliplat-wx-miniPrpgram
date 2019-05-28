@@ -1,0 +1,47 @@
+/* pages/other/callback/callback.wxss */
+.body{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: start;
+  padding: 0 10px;
+}
+
+.body .instruction{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #bdbdbd;
+}
+.body input[type='text']{
+  background: #f6f6f6;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 40rpx;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+.body textarea{
+  background: #f6f6f6;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 30rpx;
+  flex-grow: 1;
+  width: auto;
+  height: 300rpx;
+}
+ .send{
+  position: fixed;
+  bottom: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  width: 90%;
+  margin-left: 5%;
+  height: 100rpx;
+  font-size: 30rpx;
+}

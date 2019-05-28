@@ -1,0 +1,6 @@
+<!--pages/other/other/other.wxml-->
+
+  <image src='https://catsjuice.com/calliplat/img/mind.png' mode='widthFix' bindtap='lookBigImg'></image>
+
+
+

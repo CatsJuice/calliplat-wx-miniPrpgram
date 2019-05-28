@@ -1,0 +1,370 @@
+/* pages/index/item-detail/item-detail.wxss */
+page{
+  background-color: #f6f6f6;
+}
+
+
+/**
+ * 头部样式 
+*/
+
+/* 头部总体 */
+.head{
+	width:100%;
+	height:100rpx;
+  background-color: #fff;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0px 0px 5px rgba(10, 10, 10, 0.2);
+}
+/* 用户信息 */
+.head .userinfo{
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+}
+.head .userinfo image{
+  width: 80rpx;
+  margin-top: 10rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.head .userinfo .username{
+  margin-left: 10px;
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 100rpx;
+}
+
+
+/* 点赞按钮 */
+.head .like-button{
+  height: 80rpx;
+  margin-top: 10rpx;
+  margin-right: 20px;
+  background-color: #c6485a;
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+}
+.head .like-button image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 21rpx;
+  margin-left: 20px;
+}
+.head .like-button .button-word{
+  line-height: 80rpx;
+  color: #fff;
+  margin-left: 10px;
+  margin-right: 15px;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+/* 按钮普通状态 */
+.head .like-button-normal{
+  height: 80rpx;
+  margin-top: 10rpx;
+  margin-right: 20px;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+}.head .like-button-normal image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 21rpx;
+  margin-left: 20px;
+}
+.head .like-button-normal .button-word-normal{
+  line-height: 80rpx;
+  color: #b0b0b0;
+  margin-left: 10px;
+  margin-right: 15px;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+
+
+/**
+ * item详情样式
+ */
+
+/* item 图片 */
+.item-image-container{
+	width:100%;
+  background-color: #fff;
+}
+.item-image-container image{
+	width:100%;
+	height:auto;
+}
+/* item 标题 */
+.item-title{
+  background-color: #fff;
+  padding-left: 10px;
+  font-size: 50rpx;
+  font-weight: bold;
+  line-height: 100rpx;
+}
+/* item 内容 */
+.item-content{
+  background-color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 30rpx;
+}
+/* tags */
+.tags{
+  background-color: #fff;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  font-weight: bold;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: row;
+}
+.tags .tag{
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: bold;
+  border-radius: 25rpx;
+  margin-right: 10px;
+  text-align: center;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+.view-like-num{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #fff;
+  padding-bottom: 20px;
+}
+.view-like-num .a{
+  margin-left: 8px;
+  display: flex;
+  flex-direction: row;
+}
+.view-like-num .a image{
+  width: 20px;
+  height: 20px;
+}
+.view-like-num .a .b{
+  line-height: 20px;
+  font-size: 28rpx;
+  color: #bdbdbd;
+  margin-left: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * 评论列表样式
+*/
+
+.comment-container{
+  display: flex;
+  margin-top: 40rpx;
+  flex-direction: column;
+}
+.comment-container .comment-item{
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40rpx;
+  box-shadow: 0px 1px 10px rgba(150,150,150,0.1);
+}
+/* 上部样式 */
+.comment-container .comment-item .top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 120rpx;
+}
+.comment-container .comment-item .top .userinfo{
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+}
+.comment-container .comment-item .top .userinfo image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 10rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.comment-container .comment-item .top .userinfo .username{
+  line-height: 120rpx;
+  margin-left: 10px;
+}
+.comment-container .comment-item .top .datetime{
+  line-height: 120rpx;
+  padding-right: 10px;
+  font-size: 24rpx;
+  color: #c0c0c0;
+}
+/* 下部样式 */
+.comment-container .comment-item .bottom{
+  padding:20px 10px;
+  display: flex;
+  flex-direction: row;
+}
+.comment-container .comment-item .bottom .comment-content{
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 28rpx;
+  border-radius: 10px;
+  background:#f7f7f7;
+  
+}
+/* 没有评论样式 */
+.no-comment{
+  width: 100%;
+  background: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  padding: 100rpx 0;
+}
+
+
+
+/**
+ * footer 样式
+ */
+.footer{
+  width: 100%;
+  height: 120rpx;
+  background: #fff;
+  position: fixed;
+  bottom:0;
+  box-shadow: 0px 0px 5px rgba(10, 10, 10, 0.2);
+  display: flex;
+}
+
+/* 评论输入样式 */
+.footer .input-content{
+   flex-grow: 1;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+.footer .input-content input{
+  /* background-color: red; */
+  height: 80rpx;
+  border-bottom: 1px solid #bdbdbd;
+  margin-top: 20rpx;
+  padding-left: 5px;
+  font-size: 28rpx;
+}
+.footer .send-button{
+  width: 120rpx;
+  height: 120rpx;
+  /* background-color: red; */
+  flex-grow: 0;
+}
+.footer .send-button image{
+  width: 40%;
+  height: 40%;
+  margin: 30%;
+}
+
+
+
+/**
+ * 加载动画绘制
+ */
+.show{
+  display: inline;
+}
+.hide{
+  display: none;
+}
+.loading-animation{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 100rpx;
+}
+.loading-animation .loading-point{
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: #dbdbdb;
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-top: 20px;
+}
+.loading-word{
+  width: 100%;
+  padding-top: 30rpx;
+  padding-bottom: 100rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #dbdbdb;
+}
+
+.loading-animation .p1{
+  animation: loadingP1 1.5s ease 0s infinite normal;
+}
+.loading-animation .p2{
+  animation: loadingP2 1.5s ease 0s infinite normal;
+}
+.loading-animation .p3{
+  animation: loadingP3 1.5s ease 0s infinite normal;
+}
+.loading-animation .p4{
+  animation: loadingP4 1.5s ease 0s infinite normal;
+}
+.loading-animation .p5{
+  animation: loadingP5 1.5s ease 0s infinite normal;
+}
+@keyframes loadingP1{
+  0%{}
+  10%{margin-top: 0px;}
+  30%{margin-top: 20px;}
+  100%{margin-top: 20px;}
+}
+@keyframes loadingP2{
+  0%{}
+  20%{margin-top: 0px;}
+  40%{margin-top: 20px;}
+  100%{margin-top: 20px;}
+}
+@keyframes loadingP3{
+  0%{}
+  20%{margin-top: 20px;}
+  40%{margin-top: 0px;}
+  60%{margin-top: 20px;}
+  100%{margin-top: 20px;}
+}
+@keyframes loadingP4{
+  0%{}
+  40%{margin-top: 20px;}
+  60%{margin-top: 0px;}
+  80%{margin-top: 20px;}
+  100%{margin-top: 20px;}
+}
+@keyframes loadingP5{
+  0%{}
+  60%{margin-top: 20px;}
+  80%{margin-top: 0px;}
+  100%{margin-top: 20px;}
+}

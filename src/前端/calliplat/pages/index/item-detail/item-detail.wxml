@@ -1,0 +1,104 @@
+<!--pages/index/item-detail/item-detail.wxml-->
+
+<view class='head'>
+  <!-- 用户信息模块 -->
+  <view class='userinfo'>
+    <image src='{{calliInfo[0].head_path}}' />
+    <view class='username'>{{calliInfo[0].user_name}}</view>
+  </view>
+  <!-- 点赞按钮 -->
+  <block wx:if="{{islike}}">
+    <view class='like-button'bindtap='likeClick'>
+      <image src='/imgs/icons/favorite2.png' />
+      <view class="button-word" >已赞</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='like-button-normal'  bindtap='likeClick'>
+      <image src='/imgs/icons/favorite.png' />
+      <view class="button-word-normal">点赞</view>
+    </view>
+  </block>
+  
+  
+</view>
+<view style="width:100%;height:100rpx;"></view>
+
+
+
+<!-- 详情主体 -->
+<view class='item-image-container'>
+  <view class="{{loadingImgClassName}}">
+    <view class="loading-animation">
+      <view class='loading-point p1'></view>
+      <view class='loading-point p2'></view>
+      <view class='loading-point p3'></view>
+      <view class='loading-point p4'></view>
+      <view class='loading-point p5'></view>
+    </view>
+    <view class='loading-word'>(｀・ω・´) 原图正在加载中，请耐心等待...</view>
+  </view>
+  <image mode='widthFix' bindtap='showPrev' bindload='onImgLoad' src='{{calliInfo[0].img_path}}'></image>
+</view>
+<view class='item-title'>
+  {{calliInfo[0].title}}
+</view>
+<view class='item-content'>
+  {{calliInfo[0].content}}
+</view>
+<view class='tags'>
+  分类标签：
+  <view wx:for="{{calliInfo[0].tags}}" wx:for-item="tag" class="tag" style="background:{{tag.bg_color}}">{{tag.tag_name}}</view>
+</view>
+<!-- 统计 -->
+<view class="view-like-num">
+  <view class='a'>
+    <image src='/imgs/icons/viewed.png' />
+    <view class='b'>{{view}}</view>
+  </view>
+  <view class='a'>
+    <image src='/imgs/icons/good.png' />
+    <view class='b'>{{good}}</view>
+  </view>
+  <view class='a'>
+    <image src='/imgs/icons/comment.png' />
+    <view class='b'>{{commentCount}}</view>
+  </view>
+</view>
+
+<!-- <view class='devide-line'></view> -->
+<!-- 评论列表 -->
+<view class='comment-container'>
+  <view class='no-comment {{noComment}}'>
+    (ﾉД`) 这里居然没有评论！
+  </view>
+  <!-- 评论item -->
+  <view class='comment-item' wx:for="{{commentInfo}}" wx:for-item="item">
+    <view class='top'>
+      <view class='userinfo'>
+        <image src="{{item['head_path']}}" />
+        <view class='username'>{{item['user_name']}}</view>
+      </view>
+      <view class='datetime'>{{item['date']}} {{item['time']}}</view>
+    </view>
+    
+    <view class='bottom'>
+      <view class='comment-content'>
+          {{item['comment_content']}}
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- FOOTER -->
+<view style="width:100%;height:120rpx;"></view>
+<view class='footer'>
+  <view class="input-content">
+    <input bindinput='listenCommentInput' value="{{commentValue}}" placeholder="评论点什么吧..." />
+  </view>
+
+  <view class="send-button" bindtap='sendComment'>
+    <image src="/imgs/icons/send.png" />
+  </view>
+</view>

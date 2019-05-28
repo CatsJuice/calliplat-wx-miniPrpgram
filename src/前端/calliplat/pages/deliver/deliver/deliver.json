@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#f85555",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "发布",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "enablePullDownRefresh": false
+}

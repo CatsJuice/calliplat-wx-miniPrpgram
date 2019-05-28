@@ -1,0 +1,79 @@
+<!--pages/user/edit-info/edit-info.wxml-->
+<view class='body'>
+
+  <view class='username'>用户名：{{username}}</view>
+
+
+  <view class='row' bindtap='changeHead'>
+    <view class='label'>更换头像</view>
+    <view class='r'>
+      <view class='info-head'>
+        <image src='{{userHead}}' />
+      </view>
+      <view class='icon'>
+        <image src='/imgs/icons/arr_right.png' />
+      </view>
+    </view>
+  </view>
+
+  <view class='row' bindtap='unBindWx'>
+    <view class='label'>微信账号</view>
+    <view class='r'>
+      <view class='info'>
+        <open-data type="userNickName" class='wx-nickname'></open-data>
+        <open-data type="userAvatarUrl" class='info-head'></open-data>
+      </view>
+      <view class='icon'>
+        <image src='/imgs/icons/arr_right.png' />
+      </view>
+    </view>
+  </view>
+
+  <view class='row' bindtap='bindSchoolNum'>
+    <view class='label'>学号</view>
+    <view class='r'>
+      <view class='info'>
+        未绑定
+      </view>
+      <view class='icon'>
+        <image src='/imgs/icons/arr_right.png' />
+      </view>
+    </view>
+  </view>
+
+  <view class='row' bindtap='changeEmail'>
+    <view class='label'>邮箱</view>
+    <view class='r'>
+      <view class='info'>
+        {{email}}
+      </view>
+      <view class='icon'>
+        <image src='/imgs/icons/arr_right.png' />
+      </view>
+    </view>
+  </view>
+
+  <view class='row'>
+    <view class='label'>昵称</view>
+    <view class='r'>
+      <view class='info'>
+        该功能暂未开通
+      </view>
+      <view class='icon'>
+        <image src='/imgs/icons/arr_right.png' />
+      </view>
+    </view>
+  </view>
+
+  <view class='row'>
+    <view class='label'>更多</view>
+    <view class='r'>
+      <view class='info'>
+        暂无更多
+      </view>
+      <view class='icon'>
+        <image src='/imgs/icons/arr_right.png' />
+      </view>
+    </view>
+  </view>
+</view>

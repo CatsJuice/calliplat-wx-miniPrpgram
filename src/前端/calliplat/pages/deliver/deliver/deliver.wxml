@@ -1,0 +1,36 @@
+<!--pages/deliver/deliver.wxml-->
+<view class='body'>
+  
+  <!-- 头部 -->
+  <view class='head'>
+    <view class='big-title'>新建动态</view>
+    <!-- <view class='small-title'>( • ̀ω•́ )✧  立即发布你的动态到社区吧！</view> -->
+  </view>
+
+  <view class='delievr-card {{animationStyle}}'>
+    <view class='input-item'>
+      <view class='input-tag'>标题</view>
+      <input value='{{titleValue}}' type="text" placeholder-style="input-placeholder" placeholder='在此键入标题' bindinput='listenTitle'></input>
+    </view>
+
+    <view class='input-item'>
+      <view class='input-tag'>描述</view>
+      <textarea value='{{contentValue}}' placeholder='在此描述详情' placeholder-style="textarea-placeholder" bindinput='listenContent'></textarea> 
+    </view>
+
+    <view class='input-item' id='pick_img'>
+      <view class='input-tag'>添加图片</view>
+      <view class='add-img' >
+        <image mode='widthFix' class='{{choseImg}}' src='{{addImg}}' bindtap='choseImg'></image>
+      </view> 
+    </view>
+
+    <view class='deliver-button-container'>
+      <view class='deliver-button' bindtap='doDeliver'>
+        <image src="/imgs/icons/send2.png"></image>
+      </view>
+    </view>
+  </view>
+
+
+</view>

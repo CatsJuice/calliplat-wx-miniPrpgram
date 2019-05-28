@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index/index",
+    "pages/deliver/deliver/deliver",
+    "pages/user/user/user",
+    "pages/index/item-detail/item-detail",
+    "pages/other/regist/regist",
+    "pages/other/forgetPwd/forgetPwd",
+    "pages/user/setting/setting",
+    "pages/user/edit-info/edit-info",
+    "pages/other/about/about",
+    "pages/other/callback/callback"
+  ],
+  "tabBar": {
+    "color": "#e6e6e6",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index/index",
+        "text": "首页",
+        "iconPath": "imgs/icons/tab/home_normal.png",
+        "selectedIconPath": "imgs/icons/tab/home_selected.png"
+      },
+      {
+        "pagePath": "pages/deliver/deliver/deliver",
+        "text": "发布",
+        "iconPath": "imgs/icons/tab/edit_normal.png",
+        "selectedIconPath": "imgs/icons/tab/edit_selected.png"
+      },
+      {
+        "pagePath": "pages/user/user/user",
+        "text": "个人中心",
+        "iconPath": "imgs/icons/tab/user_normal.png",
+        "selectedIconPath": "imgs/icons/tab/user_selected.png"
+      }
+    ]
+  },
+  "debug": true,
+  "window": {
+    "backgroundTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "calliplat",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#ffffff"
+  }
+}

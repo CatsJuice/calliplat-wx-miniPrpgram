@@ -1,0 +1,65 @@
+<!--pages/other/regist/regist.wxml-->
+<view class="body">
+<view class='head'>
+  <view class='big-title'>
+    Join CalliPlat !
+  </view >
+
+  <view class="small-title">
+    (๑•ω•๑) 在此填写表单即可完成calliplat平台的注册
+  </view>
+</view>
+
+<!-- 注册表单 -->
+<view class='regist-form'>
+  <view class='input-item'>
+    <view class='input-tag'>
+      用户名：
+    </view>
+    <input placeholder='在此输入用户名' class='{{usernameStyle}}' bindfocus='usernameFocus' bindblur='usernameBlur' />
+  </view>
+
+  <view class='input-item'>
+    <view class='input-tag'>
+      密码：
+    </view>
+    <input type='password' placeholder='在此输入密码'  class='{{password1Style}}' bindfocus='password1Focus' bindblur='password1Blur' />
+  </view>
+  <view class='input-item'>
+    <view class='input-tag'>
+      确认密码：
+    </view>
+    <input type='password' placeholder='在此再次输入密码'  class='{{password2Style}}' bindfocus='password2Focus' bindblur='password2Blur' />
+  </view>
+
+  <view class='input-item'>
+    <view class='input-tag'>
+      邮箱：
+    </view>
+    <input placeholder='请输入要绑定的邮箱'  class='{{emailStyle}}' bindfocus='emailFocus' bindblur='emailBlur' />
+  </view>
+
+  <view class='input-item'>
+    <view class='input-tag'>
+      验证码：
+    </view>
+    <view class='ckCode'>
+      <input placeholder='在此键入验证码'  class='{{ckCodeStyle}}' bindfocus='ckCodeFocus' bindblur='ckCodeBlur' />
+      <view class='ckCode-button' bindtap='getCkCode'>{{getCkcodeButton}}</view>
+    </view>
+  </view>
+  <view class='mail-words'>{{mailInstrucation}}</view>
+
+  <!-- 按钮 -->
+  <view style='display:flex;flex-direcation:row;width:100vw'>
+    <view style='width:5%;height:100rpx;flex-grow:0;flex-shrink:0;'></view>
+    <view class='submit-button-container'>
+      <view class='submit-button' bindtap='regist'>注册</view>
+    </view>
+    <view style='width:5%;height:100rpx;flex-grow:0;flex-shrink:0;'></view>
+  </view>
+
+</view>
+
+
+</view>

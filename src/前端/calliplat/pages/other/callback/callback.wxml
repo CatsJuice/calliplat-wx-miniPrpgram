@@ -1,0 +1,16 @@
+<!--pages/other/callback/callback.wxml-->
+<view class='body'>
+  <view class='instruction'>
+    每日上限10次，今日剩余{{count}}次
+  </view>
+  <view class='title'>
+    <input placeholder='在此输入主题' value='{{title}}' type='text' bindinput='titleInput'></input>
+  </view>
+  <view class='content'>
+    <textarea placeholder='在此输入反馈内容' maxlength='500' value='{{content}}' bindinput='contentInput'></textarea>
+  </view>
+  
+</view>
+<view class='send' bindtap='doCallBack'>
+    发送
+  </view>

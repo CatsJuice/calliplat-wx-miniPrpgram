@@ -1,0 +1,167 @@
+<!--pages/user/user.wxml-->
+
+<!-- <button open-type="getUserInfo" bindgetuserinfo='wxLogin'>微信登录</button>
+<button bindtap='checkLogin'>检查登录状态</button> -->
+
+
+<view wx:if="{{islogin}}">
+  <!-- 微信已登录 -->
+  <view wx:if="{{is_bind}}">
+    <!-- 已绑定 -->
+    <view class='user-center'>
+      
+      <!-- 头部个人信息模块 --> 
+      <view class='userinfo'>
+        <view class='head' bindtap='changeHead'>
+          <image mode='widthFix' src='{{headUrl}}' />
+        </view>
+        <view class='nameinfo' data-userid='{{userId}}' bindtap='jpToEditInfo'>
+          <view class='name'>{{userName}}</view>
+          <view class='mail'>{{email}}</view>
+        </view>
+        <view class='edit-button' catchtap='jpToSetting'>
+           <image src='/imgs/icons/setting.png'></image>
+        </view>
+      </view>
+      <view class='devide-line'></view>
+      
+      <!-- TAB -->
+      <view class='tab-swiper-container'>
+        <view class='tabs'>
+          <view class="tab {{currentTab==0?'tab-checked':'tab-normal'}}" data-current="0" bindtap="switchTab">发布</view>
+          <view class="tab {{currentTab==1?'tab-checked':'tab-normal'}}" data-current="1" bindtap="switchTab">点赞</view>
+          <view class="tab {{currentTab==2?'tab-checked':'tab-normal'}}" data-current="2" bindtap="switchTab">评论</view>
+        </view>
+
+        <swiper class='tab-swiper' current='{{currentTab}}' duration='300' bindchange='tabSwitch' lower-threshold="100rpx">
+          
+          <!-- tab1 -->
+          <swiper-item>
+            <scroll-view scroll-y class='scroll-y' bindscrolltolower="loadMoreMyCalli">
+              <view class='tab1'>
+              <!-- ITEMS -->
+              <view class='item' wx:for="{{myCalliList}}" wx:key="id" id="{{item.calligraphy_id}}" bindtap='jpToDetail'>
+                <view class='image'>
+                  <image src='{{item.img_path}}' mode='aspectFill'></image>
+                </view>
+                <view class='info'>
+                  <view class='title'>{{item.title}}</view>
+                  <view class='top'>
+                    <view class='content'>{{item.content}}</view>
+                    <view class='delete' data-calliid='{{item.calligraphy_id}}' catchtap='deleteMyCalli'>
+                      <image src="/imgs/icons/delete.png" mode='widthFix'></image>
+                    </view>
+                  </view>
+                  
+                </view>
+              </view>
+
+              <view class='mycalli-bottom'>{{myBottomStatus}}</view>
+              </view>
+            </scroll-view>
+          </swiper-item>
+
+          <!-- tab2 -->
+          <swiper-item>
+            <scroll-view scroll-y class='scroll-y' bindscrolltolower="loadMoreLike">
+            <view class='tab2'>
+              <!-- ITEMS -->
+              <view class='item' wx:for="{{likeList}}" wx:key="id" id="{{item.calligraphy_id}}" bindtap='jpToDetail'>
+                <view class='image'>
+                  <image src='{{item.img_path}}' mode='aspectFill'></image>
+                </view>
+                <view class='info'>
+                  <view class='user-info'>
+                    <view class='head'>
+                      <image src='{{item.head_path}}'></image>
+                    </view>
+                    <view class='username'>{{item.user_name}}</view>
+                    <view class='dislike' data-calliid='{{item.calligraphy_id}}' catchtap="cancelLike">
+                      <image src='/imgs/icons/favorite2.png'></image>
+                    </view>
+                  </view>
+                  <view class='title'>{{item.title}}</view>
+                  <view class='content'>{{item.content}}</view>        
+                </view>
+              </view>
+
+              <view class='mycalli-bottom'>{{likeBottomStatus}}</view>
+            </view>
+            </scroll-view>
+          </swiper-item>
+
+          <!-- tab3 -->
+          <swiper-item>
+            <scroll-view scroll-y class='scroll-y' bindscrolltolower="loadMoreComment">
+            <view class='tab3'>
+
+              <!-- item -->
+              <view class='item' wx:for="{{commentList}}" wx:key="id" id="{{item.calligraphy_id}}" bindtap='jpToDetail'>
+                <view class='head'>
+                  <view class='title'>
+                    <view class='left'>【动态】{{item.title}}</view>
+                    <view class='right' data-commentid='{{item.comment_id}}' catchtap='deleteMyComment'>
+                      <image src='/imgs/icons/delete.png'>
+                    </image></view>
+                  </view>
+                  <view class='content'>【详情概述】{{item.content}}</view>
+                </view>
+
+                <view class='down'>
+                  <view class='info'>
+                    <view class='head'><image src="{{item.head_path}}"></image></view>
+                    <view class='username'>{{item.user_name}}</view>
+                    <view class='date'>{{item.date}}</view>
+                    <view class='time'>{{item.time}}</view>
+                  </view>
+
+                  <view class='comment-content'>
+                      {{item.comment_content}}
+                  </view>
+                </view>
+              </view>
+            <view class='mycalli-bottom'>{{commentBottomStatus}}</view>
+            </view>
+            </scroll-view>
+          </swiper-item>
+        </swiper>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <!-- 未绑定 -->
+    
+    <view class='head-big-title'>欢迎!</view>
+    <view class='head-small-title'>(｀・ω・´) 当前微信号未绑定calliplat平台，在下方登录你的账号以完成绑定</view>
+    <!-- <view class='head-small-title'>(初次使用时需要绑定您的微信号与平台账号，以便您在不同平台上同步数据)</view> -->
+    <view class='login-form'>
+      <view class='input-item'>
+        <view class='input-tag'>用户名:</view>
+        <input class="{{usernameFocus}}" bindfocus='usernameFocus' bindblur='usernameBlur' placeholder='在此键入你的用户名' />
+      </view>
+      <view class='input-item'>
+        <view class='input-tag'>密码:</view>
+        <input type='password' class="{{passwordFocus}}" bindfocus='passwordFocus' bindblur='passwordBlur' placeholder='在此键入你的密码' />
+      </view>
+      <!-- 按钮 -->
+      <view style='display:flex;flex-direcation:row;'>
+        <view style='width:5%;height:100rpx;flex-grow:0;flex-shrink:0;'></view>
+        <view class='submit-button-container'>
+          <view class='submit-button' bindtap='loginBind'>登录并绑定</view>
+        </view>
+        <view style='width:5%;height:100rpx;flex-grow:0;flex-shrink:0;'></view>
+      </view>
+
+      <view class='plus-option-container'>
+        <view class='plus-option' bindtap='forgetPassword'>忘记密码？</view>
+        <view class='plus-option' bindtap='jpToRegist'>注册账号</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <!-- 微信未登录 -->
+  <view class='head-big-title'>欢迎!</view>
+  <view class='head-small-title'>(｀・ω・´) 当前暂未登录，点击下方按钮即可进行微信登录</view>
+  <button class='wxlogin-button' open-type="getUserInfo" bindgetuserinfo='wxLogin'>{{wxlogin_button}}</button>
+</view>

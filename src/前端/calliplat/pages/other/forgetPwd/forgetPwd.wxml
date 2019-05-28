@@ -1,0 +1,54 @@
+<!--pages/other/forgetPwd/forgetPwd.wxml-->
+<view class='body'>
+  <!-- 头部 -->
+  <view class='head'>
+    <view class='big-title'>
+      忘记密码 ?
+    </view>
+    <view class='small-title'>
+      (#ﾟДﾟ) <text>\n</text> 不要虚，你可以在这里通过邮箱重置你的密码！
+    </view>
+  </view>
+
+
+  <!--  -->
+  <view class='regist-form'>
+
+    <view class='input-item'>
+      <view class='input-tag'>
+        用户名：
+      </view>
+      <input placeholder='输入你的用户名'  class='{{usernameStyle}}' bindfocus='usernameFocus' bindblur='usernameBlur' />
+    </view>
+
+    <view class='input-item'>
+      <view class='input-tag'>
+        验证码：
+      </view>
+      <view class='ckCode'>
+        <input placeholder='在此键入验证码'  class='{{ckCodeStyle}}' bindfocus='ckCodeFocus' bindblur='ckCodeBlur' />
+        <view class='ckCode-button' bindtap='getCkCode'>{{getCkcodeButton}}</view>
+      </view>
+    </view>
+    <view class='mail-words'>{{mailInstrucation}}</view>
+
+    <view class='input-item'>
+      <view class='input-tag'>
+        新密码：
+      </view>
+      <input type='password' placeholder='在这输入新密码'  class='{{passwordStyle}}' bindfocus='passwordFocus' bindblur='passwordBlur' />
+    </view>
+
+    <!-- 按钮 -->
+    <view style='display:flex;flex-direcation:row;width:100vw'>
+      <view style='width:5%;height:100rpx;flex-grow:0;flex-shrink:0;'></view>
+      <view class='submit-button-container'>
+        <view class='submit-button' bindtap='resetPassword'>重置密码</view>
+      </view>
+      <view style='width:5%;height:100rpx;flex-grow:0;flex-shrink:0;'></view>
+    </view>
+
+  </view>
+
+
+</view>
